@@ -1,4 +1,5 @@
 import { Component, OnInit, Input } from "@angular/core";
+import { MENU_ITEMS } from "../../_mock/mock_menu-items";
 import { MenuItem } from "../../_models";
 import { AuthenticationService } from "../../_services";
 
@@ -9,31 +10,18 @@ import { AuthenticationService } from "../../_services";
 })
 export class NavComponent implements OnInit {
   @Input() title: string;
+  menuItems: MenuItem[];
 
   constructor(
     private authenticationService: AuthenticationService
   ) {}
 
-  ngOnInit() {}
+  ngOnInit() {
+    this.menuItems = MENU_ITEMS;
+  }
 
   logout() {
         this.authenticationService.logout();
     }
 
-  menuItems: MenuItem[] = [
-    {
-      label: "logout",
-      icon: "login",
-      showOnMobile: true,
-      showOnTablet: true,
-      showOnDesktop: true
-    },
-    {
-      label: "About",
-      icon: "help",
-      showOnMobile: false,
-      showOnTablet: true,
-      showOnDesktop: true
-    }
-  ];
 }
