@@ -1,6 +1,7 @@
 <mat-toolbar fxLayout="row" color="primary">
 	<span fxFlex>{{title}}</span>
 	<button mat-button *ngFor="let item of menuItems"
+        (click)="logout()"
         [fxShow]="item.showOnDesktop"
         [fxShow.xs]="item.showOnMobile"
         [fxShow.sm]="item.showOnTablet">
