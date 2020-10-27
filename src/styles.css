@@ -20,7 +20,9 @@ body {
 .mb-10 {
   margin-bottom: 10px !important;
 }
-
+.mt-70 {
+  margin-top: 70px !important;
+}
 .ta-center {
   text-align: center !important;
 }
