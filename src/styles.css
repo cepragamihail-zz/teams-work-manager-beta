@@ -1,0 +1,33 @@
+/* Add application styles & imports to this file! */
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+
+html,
+body {
+  height: 100%;
+}
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+.m-10 {
+  margin: 10px !important;
+}
+
+.mt-10 {
+  margin-top: 10px !important;
+}
+
+.mb-10 {
+  margin-bottom: 10px !important;
+}
+
+.ta-center {
+  text-align: center !important;
+}
+
+#fab-dismiss {
+  position: fixed;
+  right: 15px;
+  bottom: 15px;
+  z-index: 99;
+}

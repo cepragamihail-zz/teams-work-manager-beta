@@ -1,0 +1,27 @@
+<div fxLayoutAlign="center center" fxFlexFill>
+	<mat-card fxFlex="95" fxFlex.gt-xs="80" fxFlex.gt-sm="60" fxFlex.gt-md="50" fxFlex.lg="25">
+		<mat-card-header fxLayout="column" fxLayoutAlign="center">
+			<mat-card-title>
+				<h1 class="ta-center">Login</h1>
+			</mat-card-title>
+		</mat-card-header>
+		<mat-divider></mat-divider>
+		<mat-card-content class="mt-10">
+			<form [formGroup]="loginForm" (submit)="onSubmit()">
+				<mat-form-field fxFlexFill>
+					<input matInput placeholder="User Name" formControlName="userName" >
+					<mat-error *ngIf="loginForm.get('userName').hasError('required')">
+						User name is <strong>required</strong>
+					</mat-error>
+				</mat-form-field>
+				<mat-form-field fxFlexFill>
+					<input matInput placeholder="password" formControlName="password">
+					<mat-error *ngIf="loginForm.get('password').hasError('required')">
+						Password is <strong>required</strong>
+					</mat-error>
+				</mat-form-field>
+				<button fxFlexFill mat-raised-button type="submit" class="mt-10" color="primary">Sign in</button>
+			</form>
+		</mat-card-content>
+	</mat-card>
+</div>
