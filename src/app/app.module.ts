@@ -18,7 +18,7 @@ import { LoginComponent } from "./login/login.component";
 import { AppRoutingModule } from "./app-routing.module";
 import { DashboardComponent } from "./dashboard/dashboard.component";
 import { NavComponent } from "./shared/nav/nav.component";
-import { HTTP_INTERCEPTORS } from "@angular/common/http";
+import { HttpClientModule, HTTP_INTERCEPTORS } from "@angular/common/http";
 import { BasicAuthInterceptor } from "./_helpers/basic-auth.interceptor";
 import { ErrorInterceptor } from "./_helpers/error.interceptor";
 import { fakeBackendProvider } from "./_helpers/fake-backend";
@@ -29,6 +29,7 @@ import { fakeBackendProvider } from "./_helpers/fake-backend";
     FormsModule,
     ReactiveFormsModule,
     BrowserAnimationsModule,
+    HttpClientModule,
     AppRoutingModule,
     MatFormFieldModule,
     MatToolbarModule,
