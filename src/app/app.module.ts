@@ -18,6 +18,10 @@ import { LoginComponent } from "./login/login.component";
 import { AppRoutingModule } from "./app-routing.module";
 import { DashboardComponent } from "./dashboard/dashboard.component";
 import { NavComponent } from "./shared/nav/nav.component";
+import { HTTP_INTERCEPTORS } from "@angular/common/http";
+import { BasicAuthInterceptor } from "./_helpers/basic-auth.interceptor";
+import { ErrorInterceptor } from "./_helpers/error.interceptor";
+import { fakeBackendProvider } from "./_helpers/fake-backend";
 
 @NgModule({
   imports: [
@@ -42,6 +46,12 @@ import { NavComponent } from "./shared/nav/nav.component";
     DashboardComponent,
     NavComponent
   ],
+  providers: [
+        { provide: HTTP_INTERCEPTORS, useClass: BasicAuthInterceptor, multi: true },
+        { provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi: true },
+        // provider used to create fake backend
+        fakeBackendProvider
+    ],
   bootstrap: [AppComponent]
 })
 export class AppModule {}
