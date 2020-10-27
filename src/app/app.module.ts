@@ -2,6 +2,10 @@ import { NgModule } from "@angular/core";
 import { BrowserModule } from "@angular/platform-browser";
 import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
+import { HttpClientModule, HTTP_INTERCEPTORS } from "@angular/common/http";
+import { BasicAuthInterceptor } from "./_helpers/basic-auth.interceptor";
+import { ErrorInterceptor } from "./_helpers/error.interceptor";
+import { fakeBackendProvider } from "./_helpers/fake-backend";
 
 import { MatFormFieldModule } from "@angular/material/form-field";
 import { MatToolbarModule } from "@angular/material/toolbar";
@@ -18,10 +22,6 @@ import { LoginComponent } from "./login/login.component";
 import { AppRoutingModule } from "./app-routing.module";
 import { DashboardComponent } from "./dashboard/dashboard.component";
 import { NavComponent } from "./shared/nav/nav.component";
-import { HttpClientModule, HTTP_INTERCEPTORS } from "@angular/common/http";
-import { BasicAuthInterceptor } from "./_helpers/basic-auth.interceptor";
-import { ErrorInterceptor } from "./_helpers/error.interceptor";
-import { fakeBackendProvider } from "./_helpers/fake-backend";
 
 @NgModule({
   imports: [
