@@ -24,7 +24,7 @@ import { AppRoutingModule } from "./app-routing.module";
 import { DashboardComponent } from "./dashboard/dashboard.component";
 import { NavComponent } from "./shared/nav/nav.component";
 import { SitesComponent } from "./components/sites/sites.component";
-import { SiteService } from './_services/site.service';
+import { SiteService } from "./_services/site.service";
 
 @NgModule({
   imports: [
