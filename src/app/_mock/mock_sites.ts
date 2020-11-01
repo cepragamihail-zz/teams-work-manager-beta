@@ -1,4 +1,4 @@
-export { Site } from "../_models";
+import { Site } from "../_models/site";
 
 export const SITES_DATA: Site[] = [
   {

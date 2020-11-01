@@ -1,0 +1,60 @@
+<div class="content" fxLayout="row wrap" fxLayoutGap="16px grid">
+	<div class="chantier-card" *ngFor="let item of sites" fxFlex="25" fxFlex.md="33" fxFlex.sm="50" fxFlex.xs="100"
+		fxLayout="column">
+		<mat-card>
+			<mat-card-header>
+				<div mat-card-avatar class="example-header-image"></div>
+				<mat-card-title>{{item.name}}</mat-card-title>
+				<mat-card-subtitle>
+					<div fxFill fxLayout="row" fxLayoutAlign="center center">
+						<button mat-icon-button aria-label="Call" class="header-button">
+          <mat-icon>local_phone</mat-icon>
+        </button>
+						<button mat-icon-button aria-label="Location">
+          <mat-icon>location_on</mat-icon>
+        </button>
+						<button mat-icon-button aria-label="Image">
+          <mat-icon>crop_original</mat-icon>
+        </button>
+					</div>
+				</mat-card-subtitle>
+			</mat-card-header>
+			<mat-card-content>
+				<mat-list>
+					<mat-list-item>
+						<mat-icon mat-list-icon>local_phone</mat-icon>
+						<div mat-line> {{item.phone}} </div>
+					</mat-list-item>
+					<mat-list-item>
+						<mat-icon mat-list-icon>location_on</mat-icon>
+						<div mat-line> {{item.address}} | asdsadasd asdsadsa sadsadsa asdsadsa asdasdsa sadsadsa</div>
+					</mat-list-item>
+				</mat-list>
+				<mat-divider></mat-divider>
+
+				<!-- <mat-nav-list>
+        <mat-list-item *ngFor="let link of teamsData">
+          <mat-icon matListIcon color="primary">supervisor_account</mat-icon>
+           <p matLine >{{ link.name }}</p>
+           <button mat-icon-button routerLink="/team/{{link.id}}">
+              <mat-icon>info</mat-icon>
+           </button>
+        </mat-list-item>
+      </mat-nav-list> -->
+
+			</mat-card-content>
+			<mat-card-actions>
+				<div fxFill fxLayout="row" fxLayoutAlign="end center">
+					<button mat-icon-button color="primary" aria-label="Details">
+          <mat-icon>more_vert</mat-icon>
+        </button>
+				</div>
+			</mat-card-actions>
+		</mat-card>
+	</div>
+
+</div>
+<!-- 
+  <button [routerLink]="['/object-edit']" id="fab-dismiss" mat-fab>
+    <mat-icon class="icon">add</mat-icon>
+  </button> -->

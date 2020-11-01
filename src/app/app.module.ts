@@ -15,6 +15,7 @@ import { MatButtonModule } from "@angular/material/button";
 import { MatDividerModule } from "@angular/material/divider";
 import { MatMenuModule } from "@angular/material/menu";
 import { MatIconModule } from "@angular/material/icon";
+import { MatListModule } from "@angular/material/list";
 import { FlexLayoutModule } from "@angular/flex-layout";
 
 import { AppComponent } from "./app.component";
@@ -22,6 +23,8 @@ import { LoginComponent } from "./login/login.component";
 import { AppRoutingModule } from "./app-routing.module";
 import { DashboardComponent } from "./dashboard/dashboard.component";
 import { NavComponent } from "./shared/nav/nav.component";
+import { SitesComponent } from "./components/sites/sites.component";
+import { SiteService } from './_services/site.service';
 
 @NgModule({
   imports: [
@@ -39,20 +42,23 @@ import { NavComponent } from "./shared/nav/nav.component";
     MatDividerModule,
     MatMenuModule,
     MatIconModule,
+    MatListModule,
     FlexLayoutModule
   ],
   declarations: [
     AppComponent,
     LoginComponent,
     DashboardComponent,
-    NavComponent
+    NavComponent,
+    SitesComponent
   ],
   providers: [
-        { provide: HTTP_INTERCEPTORS, useClass: BasicAuthInterceptor, multi: true },
-        { provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi: true },
-        // provider used to create fake backend
-        fakeBackendProvider
-    ],
+    { provide: HTTP_INTERCEPTORS, useClass: BasicAuthInterceptor, multi: true },
+    { provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi: true },
+    // provider used to create fake backend
+    fakeBackendProvider,
+    SiteService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule {}
