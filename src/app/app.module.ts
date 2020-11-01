@@ -25,6 +25,7 @@ import { DashboardComponent } from "./dashboard/dashboard.component";
 import { NavComponent } from "./shared/nav/nav.component";
 import { SitesComponent } from "./components/sites/sites.component";
 import { SiteService } from "./_services/site.service";
+import { EditSiteComponent } from './components/edit-site/edit-site.component';
 
 @NgModule({
   imports: [
@@ -50,7 +51,8 @@ import { SiteService } from "./_services/site.service";
     LoginComponent,
     DashboardComponent,
     NavComponent,
-    SitesComponent
+    SitesComponent,
+    EditSiteComponent
   ],
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass: BasicAuthInterceptor, multi: true },
