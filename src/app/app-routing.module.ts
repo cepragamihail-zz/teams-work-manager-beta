@@ -7,12 +7,23 @@ import { LoginComponent } from "./login/login.component";
 import { AuthGuard } from "./_helpers/auth.guard";
 
 const routes: Routes = [
-  { path: "", component: DashboardComponent, canActivate: [AuthGuard] },
+  {
+    path: "dashboard",
+    canActivate: [AuthGuard],
+    data: { preload: false },
+    loadChildren: () =>
+      import("./dashboard/dashboard.module").then(m => m.DashboardModule)
+  },
   { path: "login", component: LoginComponent },
   { path: "sites", component: SitesComponent },
   { path: "edit-site", component: EditSiteComponent },
+   {
+    path: "",
+    redirectTo: "dashboard",
+    pathMatch: "full"
+  },
   // otherwise redirect to home
-  { path: "**", redirectTo: "" }
+  { path: "**", redirectTo: "dashboard" }
 ];
 
 @NgModule({

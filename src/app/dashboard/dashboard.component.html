@@ -1,5 +1,6 @@
 <app-nav [title]="title"></app-nav>
-<app-sites></app-sites>
+<!-- <app-sites></app-sites> -->
+<router-outlet></router-outlet>
 <div class="content" fxLayout="row wrap" fxLayoutGap="16px grid">
 	<div fxFlex="25%" fxFlex.xs="100%" fxFlex.sm="33%" *ngFor="let num of [1,2,3,4,5,6,7]">
 		<mat-card class="mat-elevation-z4">
