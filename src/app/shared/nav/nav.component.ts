@@ -12,16 +12,13 @@ export class NavComponent implements OnInit {
   @Input() title: string;
   menuItems: MenuItem[];
 
-  constructor(
-    private authenticationService: AuthenticationService
-  ) {}
+  constructor(private authenticationService: AuthenticationService) {}
 
   ngOnInit() {
     this.menuItems = MENU_ITEMS;
   }
 
   logout() {
-        this.authenticationService.logout();
-    }
-
+    this.authenticationService.logout();
+  }
 }

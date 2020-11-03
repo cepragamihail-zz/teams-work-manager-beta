@@ -21,11 +21,7 @@ import { FlexLayoutModule } from "@angular/flex-layout";
 import { AppComponent } from "./app.component";
 import { LoginComponent } from "./login/login.component";
 import { AppRoutingModule } from "./app-routing.module";
-import { DashboardComponent } from "./dashboard/dashboard.component";
-import { NavComponent } from "./shared/nav/nav.component";
-import { SitesComponent } from "./components/sites/sites.component";
 import { SiteService } from "./_services/site.service";
-import { EditSiteComponent } from './components/edit-site/edit-site.component';
 
 @NgModule({
   imports: [
@@ -46,14 +42,7 @@ import { EditSiteComponent } from './components/edit-site/edit-site.component';
     MatListModule,
     FlexLayoutModule
   ],
-  declarations: [
-    AppComponent,
-    LoginComponent,
-    DashboardComponent,
-    NavComponent,
-    SitesComponent,
-    EditSiteComponent
-  ],
+  declarations: [AppComponent, LoginComponent],
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass: BasicAuthInterceptor, multi: true },
     { provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi: true },
